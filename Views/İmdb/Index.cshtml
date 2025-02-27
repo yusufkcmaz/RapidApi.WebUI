@@ -1,0 +1,49 @@
+﻿@model List<İmdbViewModel.Movie>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<h1>İmdb Top 250 </h1>
+
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <td>#</td>
+        <td>Film Afişi</td>
+        <td>Film Adı</td>
+        <td>çıkış Yılı</td>
+        <td>Imdb Puanı</td>
+        <td>Imdb Linki</td>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.primaryImage" width="100" height="150" /></td>
+            <td>@item.originalTitle</td>
+            <td>@item.startYear</td>
+            <td>@item.averageRating</td>
+            <td><a href="@item.url" target="_blank" class="btn btn-warning">İmdb linl</a> </td>
+        </tr>
+
+
+    }
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
